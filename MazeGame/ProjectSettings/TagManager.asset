@@ -14,9 +14,9 @@ TagManager:
   - UI
   - UI
   - Player
-  - 
-  - 
-  - 
+  - whatIsGround
+  - whatIsPlayer
+  - whatIsWall
   - 
   - 
   - 
