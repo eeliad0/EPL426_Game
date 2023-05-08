@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlowerSpawn : MonoBehaviour
 {
     [Header("Prefabs")]
-    [SerializeField] private GameObject flowerPrefab; 
+    [SerializeField] private GameObject flowerPrefab1, flowerPrefab2, flowerPrefab3, flowerPrefab4; 
 
     [Header("Spawn Point")]
     [SerializeField] private float yoffset; 
@@ -14,14 +14,17 @@ public class FlowerSpawn : MonoBehaviour
     [SerializeField] private Vector2 zSpawnPointRange;
     [SerializeField] private bool mirrorZRange;
 
-    [SerializeField] private int numOfFlowers;
+    [SerializeField] public int numOfFlowers;
     
-    public float CollectedTargets { get; private set;}
+    public int CollectedTargets { get; private set;}
 
 
     void Update(){
         if (Input.GetKeyDown(KeyCode.S))
             print(CollectedTargets);
+
+       // if(CollectedTargets == numOfFlowers)
+           
     }
 
     void Start(){
@@ -29,13 +32,28 @@ public class FlowerSpawn : MonoBehaviour
     }
 
     private void SpawnTarget(Vector2 spawnPoint){
-        GameObject go = Instantiate(flowerPrefab, new Vector3(spawnPoint.x, yoffset, spawnPoint.y), Quaternion.identity);
+        GameObject go = Instantiate(flowerPrefabPicker(), new Vector3(spawnPoint.x, yoffset, spawnPoint.y), Quaternion.identity);
         go.tag = StringRepo.TargetTag;
         BoxCollider collider = go.AddComponent<BoxCollider>();
-        collider.size *= 0.05f;
-        
-     
+        collider.size *= 0.04f;
     }
+     private GameObject flowerPrefabPicker(){
+        int random = Random.Range(0 , 4) + 1;
+        switch(random){
+            case 1:
+                return flowerPrefab1;
+            case 2:
+                return flowerPrefab2;
+            case 3:
+                return flowerPrefab3;
+            case 4:
+                return flowerPrefab4;
+            default:
+              return flowerPrefab4;
+
+        }
+     }
+    
 
     private Vector2 PickRandomPoint(){
         float x = Random.Range(xSpawnPointRange.x, xSpawnPointRange.y);
@@ -63,8 +81,8 @@ public class FlowerSpawn : MonoBehaviour
 
     }
 
-    public void AddCollectedTargets(int value = 1){
-        CollectedTargets+=value;
+    public void AddCollectedTargets(){
+        CollectedTargets++;
     }
 
     public void setScene(){

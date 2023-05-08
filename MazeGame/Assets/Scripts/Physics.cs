@@ -21,15 +21,12 @@ public class Physics : MonoBehaviour
         collision.gameObject.GetComponent<Physics>();
         if(collision.gameObject.tag == StringRepo.TargetTag){
             Destroy(collision.gameObject,0.5f);
+            gm.AddCollectedTargets();
         }
+        if(collision.gameObject.tag == StringRepo.DoorTag){
+            Destroy(collision.gameObject,0.5f);
 
     }
-
-    private void OnDestroy(){
-        if (tag == StringRepo.TargetTag){
-            if(gm!= null){
-                gm.AddCollectedTargets();
-            }
-        }
-    }
+    
+}
 }

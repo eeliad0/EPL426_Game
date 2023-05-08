@@ -23,7 +23,7 @@ public class timer : MonoBehaviour
         string minutes = ((int)t / 60).ToString();
         string seconds = (t % 60).ToString("f0");
 
-        Debug.Log(seconds);
+        //Debug.Log(seconds);
 
         timerText.text=minutes+":"+seconds;
 

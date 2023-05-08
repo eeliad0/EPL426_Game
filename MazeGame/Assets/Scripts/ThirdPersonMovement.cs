@@ -30,7 +30,9 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector3 direction = new Vector3(movement.x, 0, movement.y).normalized;
-    
+        if(Input.GetKey(KeyCode.Space)){
+            anim.Play("Slash");
+        }
         
         anim.SetFloat("Speed",0);
         if(direction.magnitude >= 0.1f){

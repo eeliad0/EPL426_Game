@@ -822,7 +822,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fceac4ebae5681646a14983cc6b83653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flowerPrefab: {fileID: 7377229552267737791}
+  flowerPrefab1: {fileID: 0}
+  flowerPrefab2: {fileID: 0}
+  flowerPrefab3: {fileID: 0}
+  flowerPrefab4: {fileID: 0}
   yoffset: 0
   xSpawnPointRange: {x: 0, y: 0}
   mirrorXRange: 0
