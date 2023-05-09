@@ -19,14 +19,20 @@ public class Physics : MonoBehaviour
             return;
         }
         collision.gameObject.GetComponent<Physics>();
+
         if(collision.gameObject.tag == StringRepo.TargetTag){
-            Destroy(collision.gameObject,0.5f);
+            GameObject child1 = collision.gameObject.transform.GetChild(0).gameObject;
+            ParticleSystem part = child1.GetComponent<ParticleSystem>();
+            part.Play();
+            Destroy(collision.gameObject,1.5f);
             gm.AddCollectedTargets();
         }
         if(collision.gameObject.tag == StringRepo.DoorTag){
-            Destroy(collision.gameObject,0.5f);
+            GameObject child1 = collision.gameObject.transform.GetChild(0).gameObject;
+            ParticleSystem part = child1.GetComponent<ParticleSystem>();
+            part.Play();
+            Destroy(collision.gameObject,3.0f);
 
     }
-    
-}
+  }
 }
