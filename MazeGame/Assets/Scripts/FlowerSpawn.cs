@@ -53,6 +53,10 @@ public class FlowerSpawn : MonoBehaviour
 
         }
      }
+    public int getCount()
+    {
+        return CollectedTargets;
+    }
     
 
     private Vector2 PickRandomPoint(){
@@ -91,8 +95,7 @@ public class FlowerSpawn : MonoBehaviour
         }
     }
 
-
-
+  
 
 
 
