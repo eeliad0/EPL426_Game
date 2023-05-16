@@ -24,14 +24,21 @@ public class Physics : MonoBehaviour
             GameObject child1 = collision.gameObject.transform.GetChild(0).gameObject;
             ParticleSystem part = child1.GetComponent<ParticleSystem>();
             part.Play();
-            Destroy(collision.gameObject,1.5f);
+            Destroy(collision.gameObject);
             gm.AddCollectedTargets();
         }
         if(collision.gameObject.tag == StringRepo.DoorTag){
             GameObject child1 = collision.gameObject.transform.GetChild(0).gameObject;
             ParticleSystem part = child1.GetComponent<ParticleSystem>();
             part.Play();
-            Destroy(collision.gameObject,3.0f);
+            Destroy(collision.gameObject,0.5f);
+
+    }
+    if(collision.gameObject.tag == StringRepo.PrincessDoorTag && gm.FlowerCheck()){
+            GameObject child1 = collision.gameObject.transform.GetChild(0).gameObject;
+            ParticleSystem part = child1.GetComponent<ParticleSystem>();
+            part.Play();
+            Destroy(collision.gameObject,0.5f);
 
     }
   }

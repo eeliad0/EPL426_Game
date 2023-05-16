@@ -757,7 +757,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7377229552267372191}
   - component: {fileID: 7377229552277244287}
-  - component: {fileID: 7660520544922695038}
   m_Layer: 0
   m_Name: flower01 (2)
   m_TagString: Untagged
@@ -811,28 +810,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7660520544922695038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7377229552267737791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fceac4ebae5681646a14983cc6b83653, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flowerPrefab1: {fileID: 0}
-  flowerPrefab2: {fileID: 0}
-  flowerPrefab3: {fileID: 0}
-  flowerPrefab4: {fileID: 0}
-  yoffset: 0
-  xSpawnPointRange: {x: 0, y: 0}
-  mirrorXRange: 0
-  zSpawnPointRange: {x: 0, y: 0}
-  mirrorZRange: 0
-  numOfFlowers: 0
 --- !u!1001 &4053040107473581150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -850,15 +827,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4693653493845900, guid: 379785de5e39005469c875710d3cc5a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.5
+      value: 2.81
       objectReference: {fileID: 0}
     - target: {fileID: 4693653493845900, guid: 379785de5e39005469c875710d3cc5a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.91
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 4693653493845900, guid: 379785de5e39005469c875710d3cc5a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.93
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4693653493845900, guid: 379785de5e39005469c875710d3cc5a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -891,6 +868,18 @@ PrefabInstance:
     - target: {fileID: 198496267189488370, guid: 379785de5e39005469c875710d3cc5a7, type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198929192870305122, guid: 379785de5e39005469c875710d3cc5a7, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198929192870305122, guid: 379785de5e39005469c875710d3cc5a7, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198929192870305122, guid: 379785de5e39005469c875710d3cc5a7, type: 3}
+      propertyPath: stopAction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 198929192870305122, guid: 379785de5e39005469c875710d3cc5a7, type: 3}
       propertyPath: lengthInSec

@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlowerSpawn : MonoBehaviour
 {
+    [Header ("Score")]
+    public Text counterText;
+
     [Header("Prefabs")]
     [SerializeField] private GameObject flowerPrefab1, flowerPrefab2, flowerPrefab3, flowerPrefab4; 
 
@@ -13,7 +17,6 @@ public class FlowerSpawn : MonoBehaviour
     [SerializeField] private bool mirrorXRange;  
     [SerializeField] private Vector2 zSpawnPointRange;
     [SerializeField] private bool mirrorZRange;
-
     [SerializeField] public int numOfFlowers;
     
     public int CollectedTargets { get; private set;}
@@ -22,13 +25,15 @@ public class FlowerSpawn : MonoBehaviour
     void Update(){
         if (Input.GetKeyDown(KeyCode.S))
             print(CollectedTargets);
-
-       // if(CollectedTargets == numOfFlowers)
+        counterText.text = "Count:" + CollectedTargets.ToString();
            
     }
 
     void Start(){
         setScene();
+        //counterText = GetComponentInChildren<Text>();
+       counterText.text = "Count:" + CollectedTargets.ToString();
+
     }
 
     private void SpawnTarget(Vector2 spawnPoint){
@@ -53,10 +58,6 @@ public class FlowerSpawn : MonoBehaviour
 
         }
      }
-    public int getCount()
-    {
-        return CollectedTargets;
-    }
     
 
     private Vector2 PickRandomPoint(){
@@ -87,6 +88,12 @@ public class FlowerSpawn : MonoBehaviour
 
     public void AddCollectedTargets(){
         CollectedTargets++;
+    }
+    
+    public bool FlowerCheck(){
+        if(CollectedTargets == numOfFlowers)
+            return true;
+        return false; 
     }
 
     public void setScene(){

@@ -12,6 +12,7 @@ public class ThirdPersonMovement : MonoBehaviour
     float turnSmoothTime = .1f; 
     float turnSmoothVelocity; 
     Animator anim; 
+    public AudioSource footsteps;
 
 
     // Start is called before the first frame update
@@ -21,17 +22,19 @@ public class ThirdPersonMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         anim = GetComponentInChildren<Animator>();
+        footsteps=GetComponent<AudioSource> ();
 
 
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   footsteps.enabled = false;
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector3 direction = new Vector3(movement.x, 0, movement.y).normalized;
         if(Input.GetKey(KeyCode.Space)){
             anim.Play("Slash");
+             footsteps.enabled = true;
         }
         
         anim.SetFloat("Speed",0);
@@ -42,8 +45,10 @@ public class ThirdPersonMovement : MonoBehaviour
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDirection.normalized * moveSpeed * Time.deltaTime);
             anim.SetFloat("Speed", 1);
+            
 
         }
+      
         direction = Vector3.zero;
         movement = Vector2.zero;
      
