@@ -34,8 +34,15 @@ public class ThirdPersonMovement : MonoBehaviour
         Vector3 direction = new Vector3(movement.x, 0, movement.y).normalized;
         if(Input.GetKey(KeyCode.Space)){
             anim.Play("Slash");
-             footsteps.enabled = true;
+            FindObjectOfType<AudioManager>().Play("swoosh");
         }
+        /*if((Input.GetKeyDown(KeyCode.UpArrow))||(Input.GetKeyDown(KeyCode.DownArrow))||(Input.GetKeyDown(KeyCode.LeftArrow))||(Input.GetKeyDown(KeyCode.RightArrow))){
+            FindObjectOfType<AudioManager>().Play("walking");
+        }
+        if ((Input.GetKeyUp(KeyCode.UpArrow))&&(Input.GetKeyUp(KeyCode.DownArrow))||(Input.GetKeyUp(KeyCode.LeftArrow))||(Input.GetKeyUp(KeyCode.RightArrow))){
+            FindObjectOfType<AudioManager>().StopPlaying ("walking");
+        }*/
+
         
         anim.SetFloat("Speed",0);
         if(direction.magnitude >= 0.1f){
@@ -45,6 +52,7 @@ public class ThirdPersonMovement : MonoBehaviour
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDirection.normalized * moveSpeed * Time.deltaTime);
             anim.SetFloat("Speed", 1);
+            
             
 
         }

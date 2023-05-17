@@ -25,14 +25,14 @@ public class FlowerSpawn : MonoBehaviour
     void Update(){
         if (Input.GetKeyDown(KeyCode.S))
             print(CollectedTargets);
-        counterText.text = "Count:" + CollectedTargets.ToString();
+        counterText.text = "Collected:" + CollectedTargets.ToString()+"/"+numOfFlowers.ToString();
            
     }
 
     void Start(){
         setScene();
         //counterText = GetComponentInChildren<Text>();
-       counterText.text = "Count:" + CollectedTargets.ToString();
+       counterText.text = "Collected:" + CollectedTargets.ToString()+"/"+numOfFlowers.ToString();
 
     }
 
