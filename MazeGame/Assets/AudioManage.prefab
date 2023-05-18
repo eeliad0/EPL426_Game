@@ -47,13 +47,25 @@ MonoBehaviour:
   sounds:
   - name: BackgroundMusic
     clip: {fileID: 8300000, guid: ad8897f19f18226449f7be81a241b330, type: 3}
-    volume: 0.19
+    volume: 0.302
     pitch: 1
     source: {fileID: 0}
     loop: 1
-  - name: Walking
-    clip: {fileID: 8300000, guid: b4ad9bc602359e646af433e8baaae94c, type: 3}
-    volume: 0.162
+  - name: swoosh
+    clip: {fileID: 8300000, guid: d79c94306f026d442aa66895efb91f18, type: 3}
+    volume: 0.609
     pitch: 1
     source: {fileID: 0}
-    loop: 1
+    loop: 0
+  - name: doorbreak
+    clip: {fileID: 8300000, guid: 9f7541c06df96074f92744ee3d2300e0, type: 3}
+    volume: 0.209
+    pitch: 1.28
+    source: {fileID: 0}
+    loop: 0
+  - name: flower
+    clip: {fileID: 8300000, guid: b0bc0cd3e55d77f41bfeb231d82eb48f, type: 3}
+    volume: 0.239
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
