@@ -19,8 +19,8 @@ public class ThirdPersonMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         anim = GetComponentInChildren<Animator>();
         footsteps=GetComponent<AudioSource> ();
 
